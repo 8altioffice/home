@@ -1,0 +1,55 @@
+/* App Store Badge Logic */
+.app-store-badge-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.app-store-badge-link:hover {
+    transform: translateY(-3px);
+}
+
+.badge-img {
+    height: 48px;
+    width: auto;
+    display: none;
+    /* Hide all by default */
+}
+
+/* Logic: 
+   badge_0 = EN Black (for Dark Mode)
+   badge_1 = EN White (for Light Mode)
+   badge_2 = TR Black (for Dark Mode)
+   badge_3 = TR White (for Light Mode)
+*/
+
+/* Default (Dark Mode) - English */
+html[lang="en"] body:not(.light-mode) .badge-0 {
+    display: block;
+}
+
+html:not([lang]) body:not(.light-mode) .badge-0 {
+    display: block;
+}
+
+/* Light Mode - English */
+html[lang="en"] body.light-mode .badge-1 {
+    display: block;
+}
+
+html:not([lang]) body.light-mode .badge-1 {
+    display: block;
+}
+
+/* Default (Dark Mode) - Turkish */
+html[lang="tr"] body:not(.light-mode) .badge-2 {
+    display: block;
+}
+
+/* Light Mode - Turkish */
+html[lang="tr"] body.light-mode .badge-3 {
+    display: block;
+}
